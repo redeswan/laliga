@@ -1,0 +1,24 @@
+backend_jugadores_index:
+    path:     /
+    defaults: { _controller: "LaLigaBundle:Backend\\Jugadores:index" }
+    methods:  GET
+
+backend_jugadores_show:
+    path:     /{id}/show
+    defaults: { _controller: "LaLigaBundle:Backend\\Jugadores:show" }
+    methods:  GET
+
+backend_jugadores_new:
+    path:     /new
+    defaults: { _controller: "LaLigaBundle:Backend\\Jugadores:new" }
+    methods:  [GET, POST]
+
+backend_jugadores_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "LaLigaBundle:Backend\\Jugadores:edit" }
+    methods:  [GET, POST]
+
+backend_jugadores_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "LaLigaBundle:Backend\\Jugadores:delete" }
+    methods:  GET

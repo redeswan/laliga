@@ -1,0 +1,24 @@
+backend_club_index:
+    path:     /
+    defaults: { _controller: "LaLigaBundle:Backend\\Club:index" }
+    methods:  GET
+
+backend_club_show:
+    path:     /{id}/show
+    defaults: { _controller: "LaLigaBundle:Backend\\Club:show" }
+    methods:  GET
+
+backend_club_new:
+    path:     /new
+    defaults: { _controller: "LaLigaBundle:Backend\\Club:new" }
+    methods:  [GET, POST]
+
+backend_club_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "LaLigaBundle:Backend\\Club:edit" }
+    methods:  [GET, POST]
+
+backend_club_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "LaLigaBundle:Backend\\Club:delete" }
+    methods:  [GET,POST]

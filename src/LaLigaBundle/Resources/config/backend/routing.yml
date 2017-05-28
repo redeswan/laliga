@@ -1,0 +1,15 @@
+#-----
+#BACKEND
+#-----
+
+backend_homepage:
+    path:     /
+    defaults: { _controller: LaLigaBundle:Backend\Default:index }
+    
+backend_club:
+    resource: "@LaLigaBundle/Resources/config/backend/routing/club.yml"
+    prefix: /club
+    
+backend_jugadores:
+    resource: "@LaLigaBundle/Resources/config/backend/routing/jugadores.yml"
+    prefix: /jugadores   

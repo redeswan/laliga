@@ -1,0 +1,30 @@
+
+
+.menu_logo_cabecera {
+    display: inline-block;
+    margin: -3px 5px 5px 12px;
+    position: relative;
+    height: 30px;
+}
+
+.menu_contenedor_cabecera {
+    background-color: #efefef;
+    box-shadow: 0 2px 5px #a3a3a3;
+    display: block;
+    position: fixed;
+    text-align: left;
+    width: 100%;
+    z-index: 1001;
+}
+
+.menu_nombre_usuario {
+    font-weight: bolder;
+}
+
+.menu_email_usuario {
+    color: #003eff;
+}
+
+.menu_salir{
+    margin: 5% 2% 0 2%;
+}

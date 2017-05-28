@@ -1,0 +1,30 @@
+.footer {
+   position:fixed;
+   width:100%;    
+   bottom:0px;
+}
+
+.footer_contenedor {
+    background-color: #efefef;
+    box-shadow: 0 2px 5px #a3a3a3;
+    display: block;
+    position: fixed;
+    text-align: left;
+    width: 100%;
+    z-index: 1003;
+    color: #000;
+    font-size: 1.2em;
+}
+
+.footer_contenedor_derecha {
+    height: 100%;
+    margin: 5px 20px 5px 20px;
+    float: right;
+}
+
+.footer_contenedor_derecha span {
+    top: 4px;
+    position: relative;
+}
+
+

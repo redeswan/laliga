@@ -1,0 +1,33 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+    #parameter_name: value
+
+services:
+    #service_name:
+    #    class: AppBundle\Directory\ClassName
+    #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
+
+    #AUTENTICATION HANDLER
+    authentication_handler:
+        class: LaLigaBundle\Security\AuthenticationHandler
+        
+    app.club.service:
+        class       : LaLigaBundle\Services\ClubService
+        arguments   : ['@doctrine.orm.entity_manager']
+
+    #Suscriber para el campo jugadores    
+    app.jugadores_field_subscriber:
+        class: LaLigaBundle\Form\EventListener\JugadoresFieldSubscriber
+        arguments: ['@doctrine.orm.entity_manager']
+        tags:
+           - { name: kernel.event_subscriber }
+           
+    #Pasar el subscriber a ClubType
+    app.form.type.proyectos:
+        class: LaLigaBundle\Form\ClubType
+        arguments: [ "@app.jugadores_field_subscriber"]
+        tags:
+            - { name: form.type }
+           
+           

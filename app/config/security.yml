@@ -1,0 +1,85 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/security.html
+security:
+#
+#    encoders:
+#        Symfony\Component\Security\Core\User\User:
+#            algorithm: bcrypt
+#            cost: 12
+#        LaLigaBundle\Entity\AdminUsers:
+#            algorithm: bcrypt
+#            cost: 12        
+#        LaLigaBundle\Entity\Usuarios:
+#            algorithm: bcrypt
+#            cost: 12
+
+    # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+#        admin:
+#            entity: 
+#                class: LaLigaBundle:AdminUsers 
+#                property: username            
+#        frontend:
+#            entity: 
+#                class: LaLigaBundle:Usuarios 
+#                property: email        
+        in_memory:
+            memory: ~
+
+    firewalls:
+#        admin_secured_area:
+#                pattern:   ^/
+#                anonymous: ~
+#                provider: admin
+#                form_login:
+#                    login_path: backend_login
+#                    check_path: backend_login_check
+#                logout:
+#                    path: backend_logout
+#                    target: backend_login
+
+#        frontend_secured_area:
+#                pattern:   ^/
+#                anonymous: ~
+#                provider: frontend
+#                form_login:
+#                    login_path: frontend_login
+#                    check_path: frontend_login_check
+#                    success_handler: authentication_handler
+#                logout:
+#                    path: frontend_logout
+#                    target: frontend_login    
+        
+        
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            # activate different ways to authenticate
+
+            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+            #http_basic: ~
+
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+            #form_login: ~
+#
+#    access_control:
+#        
+#        #DEBUG BAR
+#        - { path: ^/(_(profiler|wdt))/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+# 
+#        #BACKEND
+#        - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { path: ^/admin , roles: ROLE_ADMIN }
+#        
+#        #FRONTEND
+#        #ANONIMO
+#        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { path: ^/solicitud-acceso, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { path: ^/usuario/change_password_token, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { path: ^/usuario/forgot_password, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#        #LOGEADO
+#        - { path: ^/ , roles: ROLE_USER }        

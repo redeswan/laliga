@@ -1,0 +1,33 @@
+{% extends 'backend.html.twig' %}
+
+{% block body %}
+    {{parent()}}
+    <div class="container">
+        <div class="col-md-12">    
+            <h2>{{'Jugadores'|trans}}</h2>
+            <div class="actions">
+             <a href="{{ path('backend_jugadores_new') }}" class="btn btn-sm btn-info">{{'Nuevo Jugador'|trans}}</a>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>{{'Nombre'|trans}}</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for jugador in jugadores %}
+                    <tr>
+                        <td><a href="{{ path('backend_jugadores_edit', { 'id': jugador.id }) }}">{{ jugador.nombre }}</a></td>
+                        <td class="actions">
+                            <a href="{{ path('backend_jugadores_edit', { 'id': jugador.id }) }}" class="btn btn-sm btn-primary">{{'Editar'|trans}}</a>
+                            <a href="{{ path('backend_jugadores_delete', { 'id': jugador.id }) }}" class="btn btn-sm btn-danger">{{'Eliminar'|trans}}</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+ 
+        </div>
+    </div>
+{% endblock %}

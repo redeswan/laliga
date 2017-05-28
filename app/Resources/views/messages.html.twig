@@ -1,0 +1,12 @@
+{% set flash_messages = app.session.flashBag.all() %}
+
+<div class="container">
+{% for msg_type, messages in flash_messages %}
+    {% for msg in messages %}
+            <div class="col-md-12 alert alert-{{msg_type}}">
+                {{ msg }}
+            </div>
+    {% endfor %}                        
+{% endfor %}              
+</div>
+

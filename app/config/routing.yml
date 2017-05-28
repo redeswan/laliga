@@ -1,0 +1,8 @@
+#-------------
+# ROUTING BASE
+#-------------
+
+backend:
+    resource: "@LaLigaBundle/Resources/config/backend/routing.yml"
+    prefix:   /
+
